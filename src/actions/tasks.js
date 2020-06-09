@@ -1,3 +1,4 @@
+import { BASE_URL } from './api.js'
 
 export const setTasks = tasks => {
   return {
@@ -8,7 +9,7 @@ export const setTasks = tasks => {
 
 export const postTask = task => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/tasks", {
+    return fetch(`${BASE_URL}/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +38,7 @@ export const addTask = task => {
 
 export const updateTask = (task, id, history, completed) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/tasks/${id}`, {
+    return fetch(`${BASE_URL}/tasks/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +69,7 @@ export const updateTaskStore = task => {
 export const deleteTask = (taskId, history) => {
   history.go(-1)
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/tasks/${taskId}`, {
+    return fetch(`${BASE_URL}/tasks/${taskId}`, {
       method: "DELETE",
     })
       .then(resp => resp.json())

@@ -1,6 +1,8 @@
+import { BASE_URL } from './api.js'
+
 export const fetchComments = () => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/comments", {
+    return fetch(`${BASE_URL}/comments`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -27,7 +29,7 @@ export const setComments = comments => {
 
 export const postComment = comment => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/comments", {
+    return fetch(`${BASE_URL}/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +58,7 @@ export const addComment = comment => {
 
 export const deleteComment = (commentId, history) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/comments/${commentId}`, {
+    return fetch(`${BASE_URL}/comments/${commentId}`, {
       method: "DELETE",
     })
       .then(resp => resp.json())

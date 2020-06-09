@@ -1,8 +1,9 @@
 import { setUsers } from './users'
+import { BASE_URL } from './api.js'
 
 export const fetchDepartments = () => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/departments", {
+    return fetch(`${BASE_URL}/departments`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
