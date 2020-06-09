@@ -16,7 +16,7 @@ export const clearCurrentUser = () => {
 
 export const login = (credentials, history) => {
   return dispatch => {
-    return fetch(`${BASE_URL}/api/v1/login`, {
+    return fetch(`${BASE_URL}/login`, {
       credentials: "include",
       method: "POST",
       headers: {
