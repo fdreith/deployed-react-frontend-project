@@ -19,7 +19,6 @@ class Task extends Component {
           <li onClick={this.handleClick}>
             {this.props.task.attributes.content}
           </li>
-          <br />
           {this.state.showComponent &&
             <TaskInfo task={this.props.task} history={this.props.history} completed={this.props.completed} />
           }
@@ -37,7 +36,6 @@ class Task extends Component {
               {this.props.task.attributes.content} - by {todayOrTomorrow(this.props.task.attributes.due_date) || displayDate(this.props.task.attributes.due_date)
               }
             </li>
-            <br />
             {this.state.showComponent &&
               <TaskInfo task={this.props.task} history={this.props.history} />
             }
