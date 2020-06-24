@@ -18,11 +18,11 @@ class Task extends Component {
         <div>
           <li onClick={this.handleClick}>
             {this.props.task.attributes.content}
-            <br />
-            {this.state.showComponent &&
-              <TaskInfo task={this.props.task} history={this.props.history} completed={this.props.completed} />
-            }
           </li>
+          <br />
+          {this.state.showComponent &&
+            <TaskInfo task={this.props.task} history={this.props.history} completed={this.props.completed} />
+          }
         </div>
       )
     } else {
@@ -36,11 +36,11 @@ class Task extends Component {
               onClick={this.handleClick}>
               {this.props.task.attributes.content} - by {todayOrTomorrow(this.props.task.attributes.due_date) || displayDate(this.props.task.attributes.due_date)
               }
-              <br />
-              {this.state.showComponent &&
-                <TaskInfo task={this.props.task} history={this.props.history} />
-              }
             </li>
+            <br />
+            {this.state.showComponent &&
+              <TaskInfo task={this.props.task} history={this.props.history} />
+            }
           </div>
         </div>
       )
