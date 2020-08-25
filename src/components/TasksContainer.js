@@ -6,6 +6,9 @@ import AssignedTasks from "./AssignedTasks.js";
 import CompletedTasks from "./CompletedTasks.js";
 import EditTask from "./EditTask.js";
 import { Switch, Route } from "react-router-dom";
+import TaskInfo from "./TaskInfo.js";
+import { Container, Row, Col } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 class TasksContainer extends Component {
   state = {
