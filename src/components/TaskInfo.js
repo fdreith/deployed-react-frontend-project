@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Comment from "./Comment.js";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateTask } from "../actions/tasks";
 import CommentForm from "./CommentForm.js";
@@ -23,6 +22,7 @@ class TaskInfo extends Component {
       this.props.history,
       "completed"
     );
+    this.props.renderTaskInfo(this.props.task);
   };
 
   render() {
