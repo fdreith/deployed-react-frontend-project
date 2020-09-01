@@ -84,7 +84,7 @@ class TasksContainer extends Component {
       <div className="tasks-container">
         <Container>
           <Row>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={this.state.splitColumn ? 6 : 12}>
               <Switch>
                 <Route
                   exact
@@ -133,7 +133,7 @@ class TasksContainer extends Component {
                 </Button>
               )}
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={this.state.splitColumn ? 6 : 12}>
               <div className="col s6">
                 {this.state.renderTaskInfo && (
                   <TaskInfo
