@@ -45,6 +45,7 @@ class TasksContainer extends Component {
   renderTaskForm = () => {
     this.setState({
       renderTaskForm: !this.state.renderTaskForm,
+      splitColumn: !this.state.splitColumn,
     });
   };
 
