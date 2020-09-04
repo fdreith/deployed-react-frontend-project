@@ -83,6 +83,14 @@ class TasksContainer extends Component {
     return (
       <div className="tasks-container">
         <Container>
+          {this.state.renderTaskForm || (
+            <Button
+              variant="outline-secondary"
+              onClick={this.renderTaskForm}
+            >
+              New Task
+            </Button>
+          )}
           <Row>
             <Col xs={12} md={this.state.splitColumn ? 6 : 12}>
               <Switch>
@@ -124,14 +132,6 @@ class TasksContainer extends Component {
                   )}
                 />
               </Switch>
-              {this.state.renderTaskForm || (
-                <Button
-                  variant="outline-secondary"
-                  onClick={this.renderTaskForm}
-                >
-                  New Task
-                </Button>
-              )}
             </Col>
             <Col xs={12} md={this.state.splitColumn ? 6 : 12}>
               <div className="col s6">
