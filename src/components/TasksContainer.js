@@ -84,10 +84,7 @@ class TasksContainer extends Component {
       <div className="tasks-container">
         <Container>
           {this.state.renderTaskForm || (
-            <Button
-              variant="outline-secondary"
-              onClick={this.renderTaskForm}
-            >
+            <Button variant="outline-secondary" onClick={this.renderTaskForm}>
               New Task
             </Button>
           )}
@@ -135,6 +132,9 @@ class TasksContainer extends Component {
             </Col>
             <Col xs={12} md={this.state.splitColumn ? 6 : 12}>
               <div className="col s6">
+                {this.state.renderTaskForm && (
+                  <TaskForm renderTaskForm={this.renderTaskForm} />
+                )}
                 {this.state.renderTaskInfo && (
                   <TaskInfo
                     task={this.state.task}
@@ -154,10 +154,6 @@ class TasksContainer extends Component {
             </Col>
           </Row>
         </Container>
-        <hr />
-        {this.state.renderTaskForm && (
-          <TaskForm renderTaskForm={this.renderTaskForm} />
-        )}
       </div>
     );
   }
