@@ -89,6 +89,8 @@ class TasksContainer extends Component {
               New Task
             </Button>
           )}
+          <br />
+          <br />
           <Row>
             <Col xs={12} md={this.state.splitColumn ? 6 : 12}>
               <Switch>
