@@ -13,10 +13,10 @@ import { updateTask } from "../actions/tasks";
 
 class TasksContainer extends Component {
   state = {
-    renderTaskInfo: false,
+    toggleTaskInfo: false,
     renderTaskEdit: false,
-    splitColumn: false,
     renderTaskForm: false,
+    splitColumn: false,
     task: "",
   };
 
