@@ -5,30 +5,39 @@ const Task = (props) => {
     if (props.task.attributes.completed) {
       return (
         <div>
-          <li
+          <i
+            onClick={() => props.handleComplete(props.task)}
+            className="fa fa-check-circle"
+            aria-hidden="true"
+          ></i>{" "}
+          <span
             id={props.task.attributes.id}
-            onClick={(e) => props.renderTaskInfo(props.task, e)}
+            onClick={(e) => props.toggleTaskInfo(props.task, e)}
           >
             {props.task.attributes.content}
-          </li>
+          </span>
         </div>
       );
     } else {
       return (
         <div>
-          <li
+          <i
+            onClick={() => props.handleComplete(props.task)}
+            className="far fa-circle"
+          ></i>{" "}
+          <span
             id={props.task.attributes.id}
             className={
               props.task.attributes.due_date > new Date()
                 ? "text-default"
                 : "text-danger"
             }
-            onClick={() => props.renderTaskInfo(props.task)}
+            onClick={() => props.toggleTaskInfo(props.task)}
           >
             {props.task.attributes.content} - by{" "}
             {todayOrTomorrow(props.task.attributes.due_date) ||
               displayDate(props.task.attributes.due_date)}
-          </li>
+          </span>
         </div>
       );
     }
