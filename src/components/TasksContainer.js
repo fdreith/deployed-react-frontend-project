@@ -39,7 +39,7 @@ class TasksContainer extends Component {
   renderTaskEdit = () => {
     this.setState({
       renderTaskEdit: !this.state.renderTaskEdit,
-      renderTaskInfo: !this.state.renderTaskInfo,
+      toggleTaskInfo: !this.state.toggleTaskInfo,
     });
   };
 
@@ -157,7 +157,7 @@ class TasksContainer extends Component {
                 {this.state.renderTaskForm && (
                   <TaskForm renderTaskForm={this.renderTaskForm} />
                 )}
-                {this.state.renderTaskInfo && (
+                {this.state.toggleTaskInfo && (
                   <TaskInfo
                     task={this.state.task}
                     history={this.props.history}
