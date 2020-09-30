@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Comment from "./Comment.js";
 import Card from "react-bootstrap/Card";
 import { connect } from "react-redux";
