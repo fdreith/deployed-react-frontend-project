@@ -34,6 +34,10 @@ const TaskInfo = (props) => {
               />
             </svg>
           )}
+          <i
+            onClick={() => props.toggleTaskInfo(props.task)}
+            className="fa fa-times"
+          ></i>
 
           <h4>{this.props.task.attributes.content}</h4>
           {!this.props.task.attributes.completed || (
